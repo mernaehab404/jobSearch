@@ -1,0 +1,1360 @@
+{
+	"info": {
+		"_postman_id": "a10045d0-6f93-4b8e-951c-73991175923f",
+		"name": "JobSearch",
+		"description": "This particular app describes searching for a job that is relevant to their domain or area of interest. Different components can be created underneath index.js which serves as the root file. These components have program code for API calls, posting details of job search, error messages in case of wrong entry.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26786107",
+		"_collection_link": "https://universal-zodiac-566956.postman.co/workspace/Team-Workspace~ec3e101d-6cf0-4334-8b90-67239d6ec19c/collection/26786107-a10045d0-6f93-4b8e-951c-73991175923f?action=share&source=collection_link&creator=26786107"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"firstName\" :\"merna\",\r\n \"lastName\":\"ehab\",\r\n \"email\":\"mernaehab10@gmail.com\",\r\n \"password\":\"123\",\r\n \"recoveryEmail\":\"mernaehab@gmail.com\",\r\n \"DOB\" :\"2002-04-04\",\r\n \"mobileNumber\":\"01030419988\",\r\n \"role\" :\"User\",\r\n \"status\" : \"offline\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \"firstName\" :\"merna\",\r\n \"lastName\":\"ehab\",\r\n \"email\":\"mernaehab10@gmail.com\",\r\n \"password\":\"123\",\r\n \"recoveryEmail\":\"mernaehab@gmail.com\",\r\n \"DOB\" :\"2002-04-04\",\r\n \"mobileNumber\":\"01030419988\",\r\n \"role\" :\"User\",\r\n \"status\" : \"offline\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/auth/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "347"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15b-pKKPPzFELKfyfT/FH66/Knen/OI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 00:35:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User added successfully\",\n    \"newUser\": {\n        \"firstName\": \"merna\",\n        \"lastName\": \"ehab\",\n        \"email\": \"mernaehab10@gmail.com\",\n        \"recoveryEmail\": \"mernaehab@gmail.com\",\n        \"DOB\": \"2002-04-04T00:00:00.000Z\",\n        \"mobileNumber\": \"01030419988\",\n        \"role\": \"User\",\n        \"status\": \"offline\",\n        \"_id\": \"6688914395e74420fd61e23a\",\n        \"createdAt\": \"2024-07-06T00:35:15.880Z\",\n        \"username\": \"mernaehab\"\n    }\n}"
+						},
+						{
+							"name": "emailexist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \"firstName\" :\"merna\",\r\n \"lastName\":\"ehab\",\r\n \"email\":\"mernaehab6@gmail.com\",\r\n \"password\":\"123\",\r\n \"recoveryEmail\":\"mernaehab@gmail.com\",\r\n \"DOB\" :\"2002-04-04\",\r\n \"mobileNumber\":\"01030419966\",\r\n \"role\" :\"User\",\r\n \"status\" : \"offline\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/auth/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-JNtE4qWUGFo66ufcU1he/9fLxnE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 00:33:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"email already exist\"\n}"
+						},
+						{
+							"name": "mobileNumberExist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \"firstName\" :\"merna\",\r\n \"lastName\":\"ehab\",\r\n \"email\":\"mernaehab7@gmail.com\",\r\n \"password\":\"123\",\r\n \"recoveryEmail\":\"mernaehab@gmail.com\",\r\n \"DOB\" :\"2002-04-04\",\r\n \"mobileNumber\":\"01030419966\",\r\n \"role\" :\"User\",\r\n \"status\" : \"offline\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/auth/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-eyJGdBj9yswebe4Rp+AejdXd20w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 00:34:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"mobileNumber already exist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identifier\":\"mernaehab1@gmail.com\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/auth/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "loginsuccessfully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"identifier\":\"mernaehab@gmail.com\",\r\n    \"password\":\"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/auth/signin",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "587"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24b-Ls9zwSewl0PYRuUqHOqIfhxs97E\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 00:56:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"login successfully\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGEwNDU0ZmM5MjNlOGJhN2FjMmQiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MjAyMjc0MTh9.0mhfdXxmZljB--6DiZshjvEWTDKUmW7_n3YwkHzDZ2o\",\n    \"user\": {\n        \"_id\": \"66888a0454fc923e8ba7ac2d\",\n        \"firstName\": \"merna\",\n        \"lastName\": \"ehab\",\n        \"email\": \"mernaehab@gmail.com\",\n        \"password\": \"$2b$08$eMD2BNQrntacer/86jEpR.kn4EIYepgE.9DGQXN0/Z.uu/IWIPJXW\",\n        \"recoveryEmail\": \"mernaehab@gmail.com\",\n        \"DOB\": \"2002-04-04T00:00:00.000Z\",\n        \"mobileNumber\": \"01030419960\",\n        \"role\": \"User\",\n        \"status\": \"online\",\n        \"__v\": 0,\n        \"username\": \"mernaehab\"\n    }\n}"
+						},
+						{
+							"name": "incorrectIdentifier",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"identifier\":\"mernaehb@gmail.com\",\r\n    \"password\":\"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/auth/signin",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-RtSFEnsLBtaH3uRgbkSo95c6YkI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 00:58:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"incorrect email or mobile number\"\n}"
+						},
+						{
+							"name": "incorrectPassword",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"identifier\":\"mernaehab@gmail.com\",\r\n    \"password\":\"13\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/auth/signin",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-La30IV3IxG4lUSPZkoBsB25RUbw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 01:00:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Incorrect password\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"66888ac6525d3b48931a0fda\",\r\n    \"oldPassword\":\"123\",\r\n    \"newPassword\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/auth/password",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "conflictNumber",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGEwNDU0ZmM5MjNlOGJhN2FjMmQiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MjAyMzA1NDd9.tqV7_dlTzWxcB9l17-t8dAGOUapm295tjzAXOu4WX5E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mobileNumber\":\"01030419961\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/user/update",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-4fS3JAkqak9jg/ii7wJAkdjpkQ4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 03:15:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Mobile number already exists\"\n}"
+						},
+						{
+							"name": "conflictEmail",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGEwNDU0ZmM5MjNlOGJhN2FjMmQiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MjAyMzA1NDd9.tqV7_dlTzWxcB9l17-t8dAGOUapm295tjzAXOu4WX5E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"mernaehab1@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/user/update",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-0vInFX57D0463enA/zkOEgxNZXU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 03:16:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GetUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGFjNjUyNWQzYjQ4OTMxYTBmZGEiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MjAyMzcwNTd9.Y_8PzZNlor3LZBN9pQqEn2qdkVdW3ZhhqNz5l7rov0U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/user",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "conflictNumber",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGEwNDU0ZmM5MjNlOGJhN2FjMmQiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MjAyMzA1NDd9.tqV7_dlTzWxcB9l17-t8dAGOUapm295tjzAXOu4WX5E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mobileNumber\":\"01030419961\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/user/update",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-4fS3JAkqak9jg/ii7wJAkdjpkQ4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 03:15:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Mobile number already exists\"\n}"
+						},
+						{
+							"name": "conflictEmail",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGEwNDU0ZmM5MjNlOGJhN2FjMmQiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MjAyMzA1NDd9.tqV7_dlTzWxcB9l17-t8dAGOUapm295tjzAXOu4WX5E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"mernaehab1@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/user/update",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-0vInFX57D0463enA/zkOEgxNZXU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 03:16:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "GetAnotherUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGFjNjUyNWQzYjQ4OTMxYTBmZGEiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MjAyMzcwNTd9.Y_8PzZNlor3LZBN9pQqEn2qdkVdW3ZhhqNz5l7rov0U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/user/profile/6688914395e74420fd61e23a",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"profile",
+								"6688914395e74420fd61e23a"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "conflictNumber",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGEwNDU0ZmM5MjNlOGJhN2FjMmQiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MjAyMzA1NDd9.tqV7_dlTzWxcB9l17-t8dAGOUapm295tjzAXOu4WX5E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mobileNumber\":\"01030419961\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/user/update",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-4fS3JAkqak9jg/ii7wJAkdjpkQ4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 03:15:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Mobile number already exists\"\n}"
+						},
+						{
+							"name": "conflictEmail",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGEwNDU0ZmM5MjNlOGJhN2FjMmQiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MjAyMzA1NDd9.tqV7_dlTzWxcB9l17-t8dAGOUapm295tjzAXOu4WX5E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"mernaehab1@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/user/update",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-0vInFX57D0463enA/zkOEgxNZXU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jul 2024 03:16:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email already exists\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "addCompany",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGJjNTdmNmJjNzc3OGE0MWViMzUiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IkNvbXBhbnlfSFIiLCJpYXQiOjE3MjAzNjkwNTl9.sEHn9Fj8qN4rYYmF4ljOU53JQupJzlwqZhEr2uPtWs4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\":\"mmmm\",\r\n    \"description\":\"kjnskolwhosjj\",\r\n    \"industry\":\"ay haga\",\r\n    \"address\":\"cairoo\",\r\n    \"numberOfEmployees\":\"1-10\",\r\n    \"companyEmail\":\"mmm@gmail.com\",\r\n    \"companyHR\":\"66888bc57f6bc7778a41eb35\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/company",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateComapny",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGJjNTdmNmJjNzc3OGE0MWViMzUiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IkNvbXBhbnlfSFIiLCJpYXQiOjE3MjAzNjkwNTl9.sEHn9Fj8qN4rYYmF4ljOU53JQupJzlwqZhEr2uPtWs4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"industry\":\"testtt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/company",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCompany",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGJjNTdmNmJjNzc3OGE0MWViMzUiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IkNvbXBhbnlfSFIiLCJpYXQiOjE3MjAzNjkwNTl9.sEHn9Fj8qN4rYYmF4ljOU53JQupJzlwqZhEr2uPtWs4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/company",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getData",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGJjNTdmNmJjNzc3OGE0MWViMzUiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IkNvbXBhbnlfSFIiLCJpYXQiOjE3MjAzNjkwNTl9.sEHn9Fj8qN4rYYmF4ljOU53JQupJzlwqZhEr2uPtWs4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/company/668ac4ffaecd1a8a78a37e5f",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"company",
+								"668ac4ffaecd1a8a78a37e5f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGJjNTdmNmJjNzc3OGE0MWViMzUiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IkNvbXBhbnlfSFIiLCJpYXQiOjE3MjAzNjkwNTl9.sEHn9Fj8qN4rYYmF4ljOU53JQupJzlwqZhEr2uPtWs4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/company?name=ejada1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"company"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ejada1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "job",
+			"item": [
+				{
+					"name": "addJob",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGJjNTdmNmJjNzc3OGE0MWViMzUiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IkNvbXBhbnlfSFIiLCJpYXQiOjE3MjAzNjkwNTl9.sEHn9Fj8qN4rYYmF4ljOU53JQupJzlwqZhEr2uPtWs4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\":\"frontttt\",\r\n    \"jobLocation\":\"onsite\",\r\n    \"workingTime\":\"part-time\",\r\n    \"seniorityLevel\":\"Junior\", \r\n    \"jobDescription\":\"aajaahahah\",\r\n    \"technicalSkills\":[\"coccmmmms,msmms\"],\r\n    \"softSkills\":[\"aaaa\"],\r\n    \"addedBy\":\"66888bc57f6bc7778a41eb35\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/job",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateJob",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGJjNTdmNmJjNzc3OGE0MWViMzUiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IkNvbXBhbnlfSFIiLCJpYXQiOjE3MjAzNjkwNTl9.sEHn9Fj8qN4rYYmF4ljOU53JQupJzlwqZhEr2uPtWs4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\":\"backend\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/job/668ade96d706386cd38747d4",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"job",
+								"668ade96d706386cd38747d4"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGJjNTdmNmJjNzc3OGE0MWViMzUiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IkNvbXBhbnlfSFIiLCJpYXQiOjE3MjAzNjkwNTl9.sEHn9Fj8qN4rYYmF4ljOU53JQupJzlwqZhEr2uPtWs4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteJob",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGJjNTdmNmJjNzc3OGE0MWViMzUiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IkNvbXBhbnlfSFIiLCJpYXQiOjE3MjAzNjkwNTl9.sEHn9Fj8qN4rYYmF4ljOU53JQupJzlwqZhEr2uPtWs4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/job/668ade96d706386cd38747d4",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"job",
+								"668ade96d706386cd38747d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGJjNTdmNmJjNzc3OGE0MWViMzUiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IkNvbXBhbnlfSFIiLCJpYXQiOjE3MjAzNjkwNTl9.sEHn9Fj8qN4rYYmF4ljOU53JQupJzlwqZhEr2uPtWs4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/job",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getJob",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGJjNTdmNmJjNzc3OGE0MWViMzUiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IkNvbXBhbnlfSFIiLCJpYXQiOjE3MjAzNjkwNTl9.sEHn9Fj8qN4rYYmF4ljOU53JQupJzlwqZhEr2uPtWs4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/job?name=ejada1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"job"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ejada1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFilteredJobs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGJjNTdmNmJjNzc3OGE0MWViMzUiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IkNvbXBhbnlfSFIiLCJpYXQiOjE3MjAzNjkwNTl9.sEHn9Fj8qN4rYYmF4ljOU53JQupJzlwqZhEr2uPtWs4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/job/filter?seniorityLevel=Junior",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"job",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "workingTime",
+									"value": "part-time",
+									"disabled": true
+								},
+								{
+									"key": "jobLocation",
+									"value": "onsite",
+									"disabled": true
+								},
+								{
+									"key": "seniorityLevel",
+									"value": "Junior"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "applyToJob",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Njg4OGFjNjUyNWQzYjQ4OTMxYTBmZGEiLCJuYW1lIjoibWVybmFlaGFiIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3MjA1NjgzMzB9.iBGD2BhBfXIspUihNybzlnvejU6K0YWAC5AtMEDD9XU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jobId",
+									"value": "668aeca6da61e1063efa027e",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "66888ac6525d3b48931a0fda",
+									"type": "text"
+								},
+								{
+									"key": "userTechSkills",
+									"value": "[\"skill1\", \"skill2\"]",
+									"type": "text"
+								},
+								{
+									"key": "userSoftSkills",
+									"value": "[\"soft_skill1\", \"soft_skill2\"]",
+									"type": "text"
+								},
+								{
+									"key": "userResume",
+									"type": "file",
+									"src": "/F:/ROUTE/REACT/newResume.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/job/apply",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"job",
+								"apply"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
