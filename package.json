@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.2.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.5"
+  },
+  "name": "jobsearch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mernaehab404/jobSearch.git"
+  },
+  "author": "Merna Ehab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mernaehab404/jobSearch/issues"
+  },
+  "homepage": "https://github.com/mernaehab404/jobSearch#readme",
+  "description": ""
+}
